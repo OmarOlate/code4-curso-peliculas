@@ -7,8 +7,8 @@
     <title>Crear Categoria</title>
 </head>
 <body>
-    <form action="/categoria/create" method="POST">
-        <?= view('categoria/_form', ['op' => 'Crear']) ?>
+    <form action="/dashboard/categoria/create" method="POST">
+        <?= view('dashboard/categoria/_form', ['op' => 'Crear']) ?>
     </form>
 </body>
 </html>

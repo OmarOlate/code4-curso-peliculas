@@ -17,9 +17,13 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 
 $routes->get('/', 'Home::index');
-$routes->presenter('pelicula');
-//  $routes->presenter('pelicula');
-$routes->presenter('categoria');
+
+$routes->group('dashboard', function($routes){
+
+    $routes->presenter('pelicula', ['controller' =>'Dashboard\pelicula']);
+    //  $routes->presenter('pelicula');
+    $routes->presenter('categoria', ['controller' =>'Dashboard\categoria']);
+});
 
 // $routes->post('/hola-mundo', 'Home::index');
 // $routes->put('/hola-mundo', 'Home::index');

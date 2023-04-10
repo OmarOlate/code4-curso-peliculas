@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar <?= $categoria['title'] ?></title>
+    <title>Modificar película</title>
 </head>
 
 <body>
-    <form action="/categoria/update/<?= $categoria['id'] ?>" method="POST">
-        <?= view('categoria/_form', ['op' =>'Actualizar']) ?>
+    <form action="/dashboard/pelicula/update/<?= $pelicula['id'] ?>" method="POST">
+       <?= view('dashboard/pelicula/_form', ['op' =>'Actualizar']);  ?>
     </form>
 </body>
 

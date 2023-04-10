@@ -1,6 +1,8 @@
 <?php
-    namespace App\Controllers;
+    namespace App\Controllers\Dashboard;
+    use App\Controllers\BaseController;
     use App\Models\PeliculaModel;
+  
 
     class Pelicula extends BaseController
     {
@@ -8,7 +10,7 @@
         {
             $peliculaModel = new PeliculaModel();
 
-            echo view('/pelicula/show',[
+            echo view('/dashboard/pelicula/show',[
                 'pelicula' => $peliculaModel->find($id)
             ]);
         }
@@ -17,13 +19,13 @@
 
             $peliculaModel = new PeliculaModel();
 
-            echo view('pelicula/index', [
+            echo view('dashboard/pelicula/index', [
                 'peliculas' => $peliculaModel->findAll()
             ]);
         }
         public function new()
         {
-            echo view('pelicula/new',[
+            echo view('dashboard/pelicula/new',[
                 'pelicula' => [
                     'title' => '',
                     'description' => ''
@@ -39,13 +41,13 @@
                 'title' =>$this->request->getPost('title'),
                 'description' =>$this->request->getPost('description'),
             ]);
-
+            return redirect()->to('/dashboard/pelicula');
             
         }
         public function edit($id)
         {
             $peliculaModel = new PeliculaModel();
-            echo view('pelicula/edit', [
+            echo view('dashboard/pelicula/edit', [
                 'pelicula' => $peliculaModel->find($id)
             ]);
         }
@@ -57,13 +59,13 @@
                 'title' => $this->request->getPost('title'), 
                 'description' => $this->request->getPost('description')
             ]);
-            echo 'update';
+            return redirect()->to('/dashboard/pelicula');
         }
         public function delete($id)
         {
             $peliculaModel = new PeliculaModel();
             $peliculaModel->delete($id);
-            echo "delete";
+            return redirect()->back();
         }
 
     }

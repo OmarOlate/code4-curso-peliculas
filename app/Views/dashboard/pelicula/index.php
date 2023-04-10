@@ -11,7 +11,7 @@
 
 <body>
     <h1>Listado de peliculas</h1>
-    <a href="/pelicula/new">Nueva</a>
+    <a href="/dashboard/pelicula/new">Nueva</a>
     <table>
 
         <tr>
@@ -41,10 +41,10 @@
                     <p><?= $p['description']  ?></p>
                 </td>
                 <td>
-                    <a href="/pelicula/show/<?= $p['id']  ?>">Ver</a>
-                    <a href="/pelicula/edit/<?= $p['id']  ?>">Edit</a>
-                    <form action="/pelicula/delete/<?= $p['id'] ?>" method="post">
-                        <button type="submit">Delete</button>
+                    <a href="/dashboard/pelicula/show/<?= $p['id']  ?>">Ver</a>
+                    <a href="/dashboard/pelicula/edit/<?= $p['id']  ?>">Edit</a>
+                    <form action="/dashboard/pelicula/delete/<?= $p['id'] ?>" method="post">
+                        <button type="submit">Eliminar</button>
                     </form>
                 </td>
 
