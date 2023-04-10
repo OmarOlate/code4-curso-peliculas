@@ -11,6 +11,7 @@
 
 <body>
     <h1>Listado de peliculas</h1>
+    <?= session('key')  ?>
     <a href="/dashboard/pelicula/new">Nueva</a>
     <table>
 

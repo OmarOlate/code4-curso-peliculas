@@ -68,4 +68,9 @@
             return redirect()->back();
         }
 
+        public function test($n)
+        {
+            echo "hola mundo, el numero es ".$n;
+        }
+
     }

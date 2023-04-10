@@ -3,10 +3,13 @@ namespace App\Controllers\Dashboard;
 use App\Controllers\BaseController;
 use App\Models\CategoriaModel;
 
+
 class Categoria extends BaseController
 {
     public function index()
     {
+        
+        // session()->set('key','19.272.596-8');
         $categoriaModel = new CategoriaModel();
         echo view('dashboard/categoria/index', [
             'categorias' =>$categoriaModel->findAll()
@@ -14,6 +17,7 @@ class Categoria extends BaseController
     }
     public function new()
     {
+        // var_dump(session()->destroy());
         echo view('/dashboard/categoria/new',[
             'categoria' => [
                 'title' => ''
@@ -27,10 +31,11 @@ class Categoria extends BaseController
         $categoriaModel->insert([
             'title' =>$this->request->getPost('title'),
         ]);
-        return redirect()->to('/dashboard/categoria');
+        return redirect()->back()->with('mensaje', 'Registro creado de manera exitosa');
     }
     public function show($id)
     {
+        
         $categoriaModel = new CategoriaModel();
 
         echo view('/dashboard/categoria/show', [
@@ -54,12 +59,14 @@ class Categoria extends BaseController
             'title' => $this->request->getPost('title'), 
         ]);
         // return redirect()->back();
-        return redirect()->to('/dashboard/categoria');
+        return redirect()->back()->with('mensaje', 'Registro actalizado con éxito');
     }
     public function delete($id)
     {
         $categoriaModel = new CategoriaModel();
         $categoriaModel->delete($id);
-        return redirect()->back();
+        // return redirect()->to('/dashboard/categoria')->with('mensaje', 'Categoría eliminada con éxito');
+          session()->setFlashdata('mensaje', 'Registro eliminado');
+          return redirect()->back();
     }
 }

@@ -17,7 +17,7 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 
 $routes->get('/', 'Home::index');
-
+$routes->get('test/(:num)', 'Dashboard\Pelicula::test/$10');
 $routes->group('dashboard', function($routes){
 
     $routes->presenter('pelicula', ['controller' =>'Dashboard\pelicula']);
