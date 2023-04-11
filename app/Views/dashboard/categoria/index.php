@@ -1,7 +1,7 @@
 <?= $this->extend('dashboard/Layouts/dashboard') ?>
 
 <?= $this->section('contenido') ?>
-
+<?= view('partials/_sessions') ?>
 <h1>Listado de categorías</h1>
 
 
