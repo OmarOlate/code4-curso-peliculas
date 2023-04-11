@@ -18,6 +18,13 @@ $routes->set404Override();
 
 $routes->get('/', 'Home::index');
 $routes->get('test/(:num)', 'Dashboard\Pelicula::test/$10');
+
+$routes->group('api', ['namespace' =>'App\Controllers\Api'], function ($routes){
+    $routes->resource('pelicula');
+    $routes->resource('categoria');
+});
+
+
 $routes->group('dashboard', function($routes){
 
     // Test user... crear usuario y verficar si coincide con la encriptacion

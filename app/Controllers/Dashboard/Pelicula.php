@@ -89,6 +89,7 @@ class Pelicula extends BaseController
         $peliculaModel = new PeliculaModel();
         $peliculaModel->delete($id);
         return redirect()->back();
+        
     }
 
     public function test($n)
