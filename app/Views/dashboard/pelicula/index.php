@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
+<?= $this->extend('dashboard/Layouts/dashboard') ?>
 
-<head>
+<?= $this->section('contenido') ?>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
-</head>
-
-<body>
-    <h1>Listado de peliculas</h1>
-    <?= session('key')  ?>
+  <h1>Listado de peliculas</h1>
+   
     <a href="/dashboard/pelicula/new">Nueva</a>
     <table>
 
@@ -56,6 +48,4 @@
 
     </table>
 
-</body>
-
-</html>
+<?= $this->endSection() ?>
