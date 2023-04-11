@@ -2,7 +2,7 @@
 
 <?= $this->section('contenido') ?>
 
-<h1><?= $pelicula['title'] ?></h1>
-<p><?= $pelicula['description'] ?></p>
+<h1><?= $pelicula->title ?></h1>
+<p><?= $pelicula->description ?></p>
 
 <?= $this->endSection() ?>

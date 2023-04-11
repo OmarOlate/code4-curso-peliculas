@@ -24,19 +24,19 @@
     <?php foreach ($peliculas as $key => $p) : ?>
         <tr>
             <td>
-                <p><?= $p['id'] ?></p>
+                <p><?= $p->id ?></p>
             </td>
             <td>
-                <h3><?= $p['title']  ?></h3>
+                <h3><?= $p->title  ?></h3>
             </td>
 
             <td>
-                <p><?= $p['description']  ?></p>
+                <p><?= $p->description  ?></p>
             </td>
             <td>
-                <a href="/dashboard/pelicula/show/<?= $p['id']  ?>">Ver</a>
-                <a href="/dashboard/pelicula/edit/<?= $p['id']  ?>">Edit</a>
-                <form action="/dashboard/pelicula/delete/<?= $p['id'] ?>" method="post">
+                <a href="/dashboard/pelicula/show/<?= $p->id  ?>">Ver</a>
+                <a href="/dashboard/pelicula/edit/<?= $p->id  ?>">Edit</a>
+                <form action="/dashboard/pelicula/delete/<?= $p->id ?>" method="post">
                     <button type="submit">Eliminar</button>
                 </form>
             </td>

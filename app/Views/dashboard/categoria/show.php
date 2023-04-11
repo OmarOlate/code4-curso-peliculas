@@ -2,6 +2,6 @@
 
 <?= $this->section('contenido') ?>
 
-<h1><?= $categoria['title'] ?></h1>
+<h1><?= $categoria->title ?></h1>
 
 <?= $this->endSection() ?>

@@ -17,15 +17,15 @@
     <?php foreach ($categorias as $key => $c) : ?>
         <tr>
             <td>
-                <p><?= $c['id'] ?></p>
+                <p><?= $c->id ?></p>
             </td>
             <td>
-                <h3><?= $c['title'] ?></h3>
+                <h3><?= $c->title ?></h3>
             </td>
             <td>
-                <a href="/dashboard/categoria/show/<?= $c['id'] ?>">Ver</a>
-                <a href="/dashboard/categoria/edit/<?= $c['id'] ?>">Edit</a>
-                <form action="/dashboard/categoria/delete/<?= $c['id'] ?>" method="post">
+                <a href="/dashboard/categoria/show/<?= $c->id ?>">Ver</a>
+                <a href="/dashboard/categoria/edit/<?= $c->id ?>">Edit</a>
+                <form action="/dashboard/categoria/delete/<?= $c->id ?>" method="post">
                     <button type="submit">Delete</button>
                 </form>
             </td>
