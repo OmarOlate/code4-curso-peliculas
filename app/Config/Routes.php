@@ -20,10 +20,21 @@ $routes->get('/', 'Home::index');
 $routes->get('test/(:num)', 'Dashboard\Pelicula::test/$10');
 $routes->group('dashboard', function($routes){
 
+    // Test user... crear usuario y verficar si coincide con la encriptacion
+    // $routes->get('usuario/crear','\App\Controllers\Web\Usuario::create_user');
+    // $routes->get('usuario/verifypass', '\App\Controllers\Web\Usuario::probate_pass');
+
     $routes->presenter('pelicula', ['controller' =>'Dashboard\pelicula']);
     //  $routes->presenter('pelicula');
     $routes->presenter('categoria', ['controller' =>'Dashboard\categoria']);
 });
+
+    $routes->get('login','\App\Controllers\Web\Usuario::login', ['as'=>'usuario.login']);
+    $routes->post('login_post', '\App\Controllers\Web\Usuario::login_post', ['as'=>'usuario.logins']);
+
+    $routes->get('register','\App\Controllers\Web\Usuario::register', ['as'=>'usuario.register']);
+    $routes->post('register_post', '\App\Controllers\Web\Usuario::register_post', ['as'=>'usuario.register_post']);
+    $routes->get('logout','\App\Controllers\Web\Usuario::logout', ['as'=>'usuario.logout']);
 
 // $routes->post('/hola-mundo', 'Home::index');
 // $routes->put('/hola-mundo', 'Home::index');
